@@ -6,8 +6,8 @@ using namespace std;
 #include <math.h>
 
 //константні велечини
-#define MATH_Pi 3.1415926535897932385	//число Пі
-#define MATH_e 2.71828182846	//число Ейлера
+#define MATH_Pi 3.1415927	//число Пі
+#define MATH_e 2.71828183	//число Ейлера
 
 //-------класи-------
 class Box	//клас прямокутний паралелепіпед
@@ -68,14 +68,34 @@ public:
 	double S_osn();	//площа основи конуса
 	double S_bichn();	//полоща бічної поверхні конуса
 	double Objem();	//об'єм конуса
-	~Cone();
+	~Cone();	//деструктор
 };
 
-
-/*class cylinder
+class Сylinder	//клас Циліндр
 {
+private:
+	//властивості
+	double r;	//радіус
+	double h;	//висота
+public:
+	//конструктори
+	Cylinder();
+	Cylinder(double _r, double _h);
+	Cylinder(const Cylinder& ob);
+	~Сylinder();	//деструктор
 
-};*/
+	//гетери і сетери
+	void set_r(double _r) { r = _r; }
+	double get_r() { return r; }
+	void set_h(double _h) { h = _h; }
+	double get_h() { return h; }
+	
+	//методи
+	double S_osn();		//площа основи циліндра
+	double S_bichn();	//площа бічної поверхні циліндра
+	double S_full();	//площа повної поверхні циліндра
+	double Objem();		//об'єм циліндра
+};
 
 
 #endif	//end mathematics.h
