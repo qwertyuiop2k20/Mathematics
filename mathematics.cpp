@@ -28,3 +28,14 @@ double Cone::Objem() { return ((MATH_Pi * pow(radius, 2)) / 3.0) * h; }	// 1/3 *
 
 Cone::~Cone() { }
 //-------------------------------------------------
+//реалізація класу Cylinder -- циліндр ------------
+Cylinder::Cylinder() { r = -1; h = -1; }
+Cylinder::Cylinder(double _r, double _h) { r = _r; h = _h; }
+Cylinder::Cylinder(const Cylinder& ob) { r = ob.r; h = ob.h; }
+Cylinder::~Сylinder() { }
+
+double Cylinder::S_osn() { return MATH_Pi * pow(r, 2); }	//pi * r^2
+double Cylinder::S_bichn() { return 2 * MATH_Pi * r * h; }	//2 * pi * r* h
+double Cylinder::S_full() { return 2 * MATH_Pi * pow(r, 2) + 2 * MATH_Pi * r * h; }	//2 * S_osn + S_bichn
+double Cylinder::Objem() { return MATH_Pi * pow(r, 2) * h; }	//S_osn * h
+//-------------------------------------------------
